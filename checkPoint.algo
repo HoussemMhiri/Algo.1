@@ -1,0 +1,23 @@
+ALGORITHM read_sentence
+VAR
+  str: STRING 
+  i: INTEGER:= 0  
+  nw:INTEGER:=0
+  nv,l:INTEGER :=0
+ 
+BEGIN
+       Read(str);
+    l=str.length 
+   END_FOR 
+   FOR i FROM 0 TO str.length -1 STEP step  DO
+    IF (str[i]= " " OR str[i]= '.') THEN
+        nw=nw +1 
+    END_IF 
+    FOR i FROM 0 TO str.length -1 STEP step  DO
+        IF (str[i] in ["a","A","e","E","i","I","o","O","u","U"]) THEN
+           nv=nv +1 
+        END_IF
+    END_FOR
+   END_FOR
+ Write ("this is the number of  : words in this sentence , vowels & caracters :",nw,nv,l)
+END
